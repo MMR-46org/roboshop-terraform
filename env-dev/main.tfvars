@@ -23,5 +23,12 @@ vpc  = {
 
 
 eks  = {
-  main = {}
+  main = {
+    node_groups = {
+      main = {
+        size   = 1
+
+      }
+    }
+  }
 }
