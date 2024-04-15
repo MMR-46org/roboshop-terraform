@@ -25,4 +25,5 @@ module "eks" {
   component              =  "eks"
 
   subnet_ids             = lookup(lookup(module.vpc, "main" , null), "app_subnet_ids", null)
+  node_groups            = each.value["node_groups"]
 }
