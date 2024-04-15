@@ -7,4 +7,6 @@ variable "prometheus_cidrs" {}
 
 // roboshop variables
 variable "vpc" {}
+variable "eks" {}
+
 
