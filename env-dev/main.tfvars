@@ -22,14 +22,6 @@ vpc  = {
 
 
 
-rds = {
-#  main = {
-#    allocated_storage    = 10
-#    db_name              = "roboshop"
-#    engine               = "mysql"
-#    engine_version       = "5.7"
-#    instance_class       = "db.t3.micro"
-#    family               = "mysql5.7"
-#    }
-
+eks  = {
+  main = {}
 }
