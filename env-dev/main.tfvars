@@ -23,42 +23,13 @@ vpc  = {
 
 
 rds = {
-  main = {
-    allocated_storage    = 10
-    db_name              = "expense"
-    engine               = "mysql"
-    engine_version       = "5.7"
-    instance_class       = "db.t3.micro"
-    family               = "mysql5.7"
-    }
+#  main = {
+#    allocated_storage    = 10
+#    db_name              = "roboshop"
+#    engine               = "mysql"
+#    engine_version       = "5.7"
+#    instance_class       = "db.t3.micro"
+#    family               = "mysql5.7"
+#    }
 
-}
-
-
-app = {
-  main  = {
-    backend_app_port          = 8080
-    backend_instance_capacity = 1
-    backend_instance_type     = "t3.small"
-
-
-    frontend_app_port       = 80
-    frontend_instance_capacity = 1
-    frontend_instance_type    = "t3.small"
-
-
-  }
-}
-
-alb = {
-  main = {
-    alb_name               =  "public"
-    internal               =  false
-    sg_cidr_blocks         = ["0.0.0.0/0"]
-
-
-    private_alb_name       =  "private"
-    private_internal       =  true
-
-  }
 }
