@@ -24,5 +24,5 @@ module "eks" {
   project_name           =  var.project_name
   component              =  "eks"
 
-  subnet_ids             = lookup(lookup(module.vpc, "main" , null),"app_subnet_ids", null)
+  subnet_ids             = lookup(lookup(module.vpc, "main" , null), "app_subnet_ids", null)
 }
