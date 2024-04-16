@@ -28,7 +28,7 @@ eks  = {
       main = {
         size   = 1
         instance_types = ["t3.large"]
-        capacity_type  = "spot"
+        capacity_type  = "SPOT"
 
       }
     }
