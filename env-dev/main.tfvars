@@ -27,6 +27,8 @@ eks  = {
     node_groups = {
       main = {
         size   = 1
+        instance_types = ["t3.large"]
+        capacity_type  = "spot"
 
       }
     }
