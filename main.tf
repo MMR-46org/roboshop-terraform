@@ -116,7 +116,7 @@ module  "rabbitmq" {
   kms             = var.kms_key_id
   bastion_cidrs   = var.bastion_cidrs
   route53_zone_id = var.zone_id
-  project_name = var.project_name
+  project_name    = var.project_name
 
   subnets  = lookup(lookup(module.vpc, "main", null), "db_subnets_ids", null)
   vpc_id   = lookup(lookup(module.vpc, "main", null), "vpc_id", null)

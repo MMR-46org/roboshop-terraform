@@ -27,7 +27,7 @@ eks  = {
     node_groups = {
       n1 = {
         size   = 1
-        instance_types = ["t3.large"]
+        instance_types = ["m7i.large"]
         capacity_type  = "SPOT"
 
       }
