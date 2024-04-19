@@ -8,9 +8,10 @@ module "vpc" {
   web_subnets_cidr     = each.value["web_subnets_cidr"]
   app_subnets_cidr     =  each.value["app_subnets_cidr"]
   db_subnets_cidr        =  each.value["db_subnets_cidr"]
+  az                     =  each.value ["az"]
+
   env                    = var.env
   project_name           =  var.project_name
-  az                     =  each.value ["az"]
 }
 
 
@@ -90,6 +91,7 @@ module "rds" {
   env                    = var.env
   tags                   = {}
   kms                    = var.kms_key_id
+  project_name           =  var.project_name
 
   allocated_storage      = each.value["allocated_storage"]
   engine                 = each.value["engine"]
