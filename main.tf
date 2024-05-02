@@ -84,26 +84,26 @@ module "elasticache" {
 
 
 
-#module "rds" {
-#  source                 = "git::https://github.com/MMR-46org/tf-module-rds.git"
-#  for_each               = var.rds
-#
-#  env                    = var.env
-#  tags                   = {}
-#  kms                    = var.kms_key_id
-#  project_name           =  var.project_name
-#
-#  allocated_storage      = each.value["allocated_storage"]
-#  engine                 = each.value["engine"]
-#  engine_version         = each.value["engine_version"]
-#  parameter_group_family = each.value["parameter_group_family"]
-#  instance_class         = each.value["instance_class"]
-#
-#  subnets              = lookup(lookup(module.vpc, "main", null), "db_subnet_ids", null)
-#  vpc_id               = lookup(lookup(module.vpc, "main", null), "vpc_id", null)
-#  sg_cidrs             = lookup(lookup(var.vpc, "main", null), "app_subnets_cidr", null)
-#
-#}
+module "rds" {
+  source                 = "git::https://github.com/MMR-46org/tf-module-rds.git"
+  for_each               = var.rds
+
+  env                    = var.env
+  tags                   = {}
+  kms                    = var.kms_key_id
+  project_name           =  var.project_name
+
+  allocated_storage      = each.value["allocated_storage"]
+  engine                 = each.value["engine"]
+  engine_version         = each.value["engine_version"]
+  parameter_group_family = each.value["parameter_group_family"]
+  instance_class         = each.value["instance_class"]
+
+  subnets              = lookup(lookup(module.vpc, "main", null), "db_subnet_ids", null)
+  vpc_id               = lookup(lookup(module.vpc, "main", null), "vpc_id", null)
+  sg_cidrs             = lookup(lookup(var.vpc, "main", null), "app_subnets_cidr", null)
+
+}
 
 
 #module  "rabbitmq" {
