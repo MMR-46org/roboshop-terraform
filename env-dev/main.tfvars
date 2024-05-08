@@ -71,7 +71,7 @@ rds       =  {
     allocated_storage  = 20
     engine              = "mysql"
     engine_version      = "5.7.44"
-    instance_class      = "db.t3.micro"
+    instance_class      = "db.m5.large"
     parameter_group_family= "mysql5.7"
   }
 }
