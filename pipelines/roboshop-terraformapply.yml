@@ -50,15 +50,15 @@ pipelines:
                     arguments:
                       - -l
                       - -A
-#      - PROD:
-#          fetch_materials: true
-#          jobs:
-#            deployment:
-#              timeout: 0
-#              tasks:
-#                - exec:
-#                    command: terraform
-#                    arguments: [ "init","-backend-config=env-prod/state.tfvars" ]
-#                - exec:
-#                    command: terraform
-#                    arguments: [ "apply", "-var-file=env-prod/main.tfvars", "-auto-approve" ]
+      - PROD:
+          fetch_materials: true
+          jobs:
+            deployment:
+              timeout: 0
+              tasks:
+                - exec:
+                    command: terraform
+                    arguments: [ "init","-backend-config=env-prod/state.tfvars" ]
+                - exec:
+                    command: terraform
+                    arguments: [ "apply", "-var-file=env-prod/main.tfvars", "-auto-approve" ]
