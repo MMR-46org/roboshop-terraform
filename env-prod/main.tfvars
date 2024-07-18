@@ -24,12 +24,11 @@ vpc  = {
 
 rds = {
   main = {
-    allocated_storage    = 10
-    db_name              = "roboshop"
-    engine               = "mysql"
-    engine_version       = "5.7"
-    instance_class       = "db.t3.micro"
-    family               = "mysql5.7"
+    allocated_storage      = 20
+    engine                 = "mysql"
+    engine_version         = "5.7.44"
+    instance_class         = "db.m5.large"
+    parameter_group_family = "mysql5.7"
   }
 
 }
@@ -60,5 +59,44 @@ alb = {
     private_alb_name       =  "private"
     private_internal       =  true
 
+  }
+}
+
+
+eks = {
+  main = {
+    node_groups = {
+      n2 = {
+        size           = 1
+        instance_types = ["m7i.large"]
+        capacity_type  = "SPOT"
+      }
+    }
+  }
+}
+
+docdb = {
+  main = {
+    engine                 = "docdb"
+    engine_version         = "4.0.0"
+    instance_class         = "db.t3.medium"
+    parameter_group_family = "docdb4.0"
+    instance_count         = 1
+  }
+}
+
+elasticache = {
+  main = {
+    engine                 = "redis"
+    engine_version         = "6.2"
+    node_type              = "cache.t3.micro"
+    parameter_group_family = "redis6.x"
+    num_cache_nodes        = 1
+  }
+}
+
+rabbitmq = {
+  main = {
+    instance_type = "t3.small"
   }
 }
