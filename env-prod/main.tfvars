@@ -1,5 +1,5 @@
 env                         = "prod"
-project_name                = "expense"
+project_name                = "roboshop"
 kms_key_id                  = "arn:aws:kms:us-east-1:512646826903:key/91ae5e2e-d734-4d42-b51d-1acf22378265"
 bastion_cidrs               = ["172.31.15.146/32"]
 prometheus_cidrs            = ["172.31.42.220/32"]
